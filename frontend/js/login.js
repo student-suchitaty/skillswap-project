@@ -44,7 +44,7 @@ async function(e){
 
         console.log(data);
 
-        if(data === "Login Successful"){
+        if(data === "Login Successful" || data === "Admin Login Successful"){
 
             alert("Login Successful");
 
@@ -54,7 +54,7 @@ async function(e){
             );
 
             window.location.href =
-            "dashboard.html";
+            data === "Admin Login Successful" ? "admin.html" : "dashboard.html";
 
         }
 

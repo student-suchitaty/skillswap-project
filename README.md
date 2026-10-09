@@ -52,3 +52,15 @@ skillswap-project/
 │
 ├── .gitignore
 └── README.md
+## Latest SkillSwap Modules
+
+- Request management: Pending, Accepted and Rejected statuses.
+- Accepted connections: study material sharing is available after a request is accepted.
+- Study Material Swap: send notes/PDFs/files, view received/sent materials and download files.
+- Admin Dashboard: manage users, requests and study materials.
+
+### Demo Admin Account
+- Email: `admin@skillswap.com`
+- Password: `admin123`
+
+The admin account is created automatically when the Spring Boot backend starts if it does not already exist.

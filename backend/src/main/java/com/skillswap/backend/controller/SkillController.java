@@ -10,32 +10,27 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-
 public class SkillController {
 
     @Autowired
     private SkillService skillService;
 
     // Add Skill
-
     @PostMapping("/addSkill")
-
-    public Skill addSkill(
-            @RequestBody Skill skill){
-
+    public Skill addSkill(@RequestBody Skill skill) {
         return skillService.addSkill(skill);
-
     }
 
     // Find Matches
-
     @GetMapping("/findMatches/{skill}")
-
-    public List<Skill> findMatches(
-            @PathVariable String skill){
-
+    public List<Skill> findMatches(@PathVariable String skill) {
         return skillService.findMatches(skill);
-
     }
 
+    // Get All Skills
+    @GetMapping("/skills")
+    public List<Skill> getAllSkills() {
+        return skillService.getAllSkills();
+    }
 }
+

@@ -28,3 +28,21 @@ build/
 # OS generated files
 .DS_Store
 Thumbs.db
+# Java / Spring Boot
+target/
+*.class
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db

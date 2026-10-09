@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Add Skills</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    
 
     <!-- Sidebar -->
 
@@ -22,11 +22,14 @@
             <li><a href="addskills.html">My Skills</a></li>
             <li><a href="findmatches.html">Find Matches</a></li>
             <li><a href="requests.html">Requests</a></li>
+            <li><a href="contact.html">  Contact Admin</a></li>
+            <li><a href="studymaterials.html">Study Material</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="index.html">Logout</a></li>
         </ul>
 
     </div>
+
 
     <!-- Main Content -->
 
@@ -38,44 +41,86 @@
 
             <form id="skillForm">
 
-              <input
-                type="text"
-                id="offeredSkill"
-                placeholder="Enter Skill Offered"
-              >
+                <!-- Offered Skill -->
 
-             <input
-               type="text"
-               id="wantedSkill"
-               placeholder="Enter Skill Wanted"
-              >
+                <label for="offeredSkill">
+                    Skill You Can Teach
+                </label>
 
-             <button type="submit">
-                 Add Skills
-            </button>
+                <select id="offeredSkill" required>
 
-             </form>
+                    <option value="">
+                        Loading skills...
+                    </option>
+
+                </select>
+
+
+                <!-- Wanted Skill -->
+
+                <label for="wantedSkill">
+                    Skill You Want to Learn
+                </label>
+
+                <select id="wantedSkill" required>
+
+                    <option value="">
+                        Loading skills...
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Skills
+                </button>
+
+            </form>
+
+
+            <!-- Request New Skill -->
+
+            <div style="margin-top: 25px;">
+
+                <p>
+                    Can't find the skill you want?
+                </p>
+
+                <button
+                    type="button"
+                    onclick="requestNewSkill()">
+
+                    Request a New Skill
+
+                </button>
+
+            </div>
+
         </div>
 
-        <!-- Skill List -->
+
+        <!-- Current Skills -->
 
         <div class="section">
 
             <h2>My Current Skills</h2>
 
-            <div class="skills">
+            <div
+                class="skills"
+                id="currentSkills">
 
-                <div class="skill">Java</div>
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
+                <p>
+                    Your selected skills will appear here.
+                </p>
 
             </div>
 
         </div>
 
     </div>
-<script src="js/addskills.js"></script>
+
+
+    <script src="js/addskills.js"></script>
 
 </body>
 </html>

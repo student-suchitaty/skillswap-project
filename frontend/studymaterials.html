@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Material - SkillSwap</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+<h2>SkillSwap</h2>
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li><li><a href="addskills.html">My Skills</a></li>
+<li><a href="findmatches.html">Find Matches</a></li><li><a href="requests.html">Requests</a></li>
+<li><a href="studymaterials.html">Study Material</a></li><li><a href="profile.html">Profile</a></li><li><a href="index.html">Logout</a></li>
+</ul></div>
+<div class="main-content"><div class="section">
+<h2>Study Material Swap</h2>
+<p>Share notes, PDFs and learning material with accepted SkillSwap connections.</p>
+<form id="materialForm" class="material-form">
+<select id="receiverEmail" required><option value="">Select a connection</option></select>
+<input type="text" id="materialTitle" placeholder="Material title" required>
+<textarea id="materialDescription" placeholder="Short description"></textarea>
+<input type="file" id="materialFile" required>
+<button type="submit">Send Study Material</button>
+</form>
+<hr>
+<h3>Received Materials</h3><div id="receivedMaterials"></div>
+<h3>Sent Materials</h3><div id="sentMaterials"></div>
+</div></div>
+<script src="js/studymaterials.js"></script>
+</body></html>

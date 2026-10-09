@@ -889,3 +889,14 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+/* SkillSwap feature cards */
+.request-card, .material-card { margin-top: 18px; }
+.accept-btn, .reject-btn, .download-btn { display: inline-block; border: none; border-radius: 8px; padding: 9px 16px; margin: 8px 8px 0 0; cursor: pointer; text-decoration: none; font-size: 14px; }
+.accept-btn { background: #2e7d32; color: #fff; }
+.reject-btn { background: #c62828; color: #fff; }
+.download-btn { background: #185FA5; color: #fff; }
+.material-form { display: grid; gap: 14px; max-width: 650px; margin: 20px 0 35px; }
+.material-form input, .material-form select, .material-form textarea { padding: 12px; border: 1px solid #d5deed; border-radius: 8px; font: inherit; }
+.material-form textarea { min-height: 90px; resize: vertical; }
+.material-form button { background: #185FA5; color: white; border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer; }
+.section hr { border: 0; border-top: 1px solid #e4eaf6; margin: 30px 0; }

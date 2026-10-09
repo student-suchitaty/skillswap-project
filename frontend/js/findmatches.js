@@ -20,8 +20,8 @@ async function findMatches() {
 
                     <p>Wants: ${match.wantedSkill}</p>
 
-                    <button onclick="sendRequest(localStorage.getItem('email'), '${match.email}')">
-                        Send Request
+                    <<button onclick="sendRequest(localStorage.getItem('userEmail'), '${match.email}', '${match.offeredSkill}')">
+                          Send Request
                     </button>
 
                 </div>
@@ -32,33 +32,41 @@ async function findMatches() {
         console.log(error);
     }
 }
-async function sendRequest(sender, receiver) {
+
+async function sendRequest(sender, receiver, subject) {
 
     const request = {
         senderEmail: sender,
         receiverEmail: receiver,
-        status: "pending"
+        subject: subject,
+        status: "Pending"
     };
 
     try {
+        const response = await fetch(
+            "http://localhost:8090/send-request",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(request)
+            }
+        );
 
-        const response = await fetch("http://localhost:8090/send-request", {
+        const data = await response.json().catch(() => ({}));
 
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+        if (!response.ok) {
+            throw new Error(
+                data.message || "Request could not be sent."
+            );
+        }
 
-            body: JSON.stringify(request)
-        });
-
-        const data = await response.text(); // IMPORTANT FIX
-        console.log(data);
-
-        alert("Request Sent Successfully");
+        alert("Request sent successfully!");
 
     } catch (error) {
-        console.log(error);
-        alert("Error sending request");
+        console.error("Request error:", error);
+        alert(error.message || "Error sending request.");
     }
 }
+
